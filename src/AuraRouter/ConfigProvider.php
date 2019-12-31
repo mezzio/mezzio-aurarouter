@@ -1,16 +1,17 @@
 <?php
+
 /**
- * @see       https://github.com/zendframework/zend-expressive-aurarouter for the canonical source repository
- * @copyright Copyright (c) 2018 Zend Technologies USA Inc. (https://www.zend.com)
- * @license   https://github.com/zendframework/zend-expressive-aurarouter/blob/master/LICENSE.md New BSD License
+ * @see       https://github.com/mezzio/mezzio-aurarouter for the canonical source repository
+ * @copyright https://github.com/mezzio/mezzio-aurarouter/blob/master/COPYRIGHT.md
+ * @license   https://github.com/mezzio/mezzio-aurarouter/blob/master/LICENSE.md New BSD License
  */
 
 declare(strict_types=1);
 
-namespace Zend\Expressive\Router\AuraRouter;
+namespace Mezzio\Router\AuraRouter;
 
-use Zend\Expressive\Router\AuraRouter;
-use Zend\Expressive\Router\RouterInterface;
+use Mezzio\Router\AuraRouter;
+use Mezzio\Router\RouterInterface;
 
 class ConfigProvider
 {
@@ -26,6 +27,10 @@ class ConfigProvider
         return [
             'aliases' => [
                 RouterInterface::class => AuraRouter::class,
+
+                // Legacy Zend Framework aliases
+                \Zend\Expressive\Router\RouterInterface::class => RouterInterface::class,
+                \Zend\Expressive\Router\AuraRouter::class => AuraRouter::class,
             ],
             'invokables' => [
                 AuraRouter::class => AuraRouter::class,

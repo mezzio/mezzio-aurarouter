@@ -1,13 +1,14 @@
 <?php
+
 /**
- * @see       https://github.com/zendframework/zend-expressive-aurarouter for the canonical source repository
- * @copyright Copyright (c) 2015-2017 Zend Technologies USA Inc. (https://www.zend.com)
- * @license   https://github.com/zendframework/zend-expressive-aurarouter/blob/master/LICENSE.md New BSD License
+ * @see       https://github.com/mezzio/mezzio-aurarouter for the canonical source repository
+ * @copyright https://github.com/mezzio/mezzio-aurarouter/blob/master/COPYRIGHT.md
+ * @license   https://github.com/mezzio/mezzio-aurarouter/blob/master/LICENSE.md New BSD License
  */
 
 declare(strict_types=1);
 
-namespace Zend\Expressive\Router;
+namespace Mezzio\Router;
 
 use Aura\Router\Route as AuraRoute;
 use Aura\Router\RouterContainer as Router;
@@ -217,7 +218,7 @@ class AuraRouter implements RouterInterface
     }
 
     /**
-     * Match an Aura\Route to a Zend\Expressive\Router\Route.
+     * Match an Aura\Route to a Mezzio\Router\Route.
      *
      * @param AuraRoute $auraRoute
      * @return false|Route False if unable to match to a composed route instance.
