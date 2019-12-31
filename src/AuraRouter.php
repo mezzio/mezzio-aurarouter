@@ -1,11 +1,12 @@
 <?php
+
 /**
- * @see       https://github.com/zendframework/zend-expressive-aurarouter for the canonical source repository
- * @copyright Copyright (c) 2015-2016 Zend Technologies USA Inc. (http://www.zend.com)
- * @license   https://github.com/zendframework/zend-expressive-aurarouter/blob/master/LICENSE.md New BSD License
+ * @see       https://github.com/mezzio/mezzio-aurarouter for the canonical source repository
+ * @copyright https://github.com/mezzio/mezzio-aurarouter/blob/master/COPYRIGHT.md
+ * @license   https://github.com/mezzio/mezzio-aurarouter/blob/master/LICENSE.md New BSD License
  */
 
-namespace Zend\Expressive\Router;
+namespace Mezzio\Router;
 
 use Aura\Router\Route as AuraRoute;
 use Aura\Router\RouterContainer as Router;
@@ -251,7 +252,7 @@ class AuraRouter implements RouterInterface
     }
 
     /**
-     * Match an Aura\Route to a Zend\Expressive\Router\Route.
+     * Match an Aura\Route to a Mezzio\Router\Route.
      *
      * @param AuraRoute $auraRoute
      * @return false|Route False if unable to match to a composed route instance.
@@ -281,7 +282,7 @@ class AuraRouter implements RouterInterface
      * - no HTTP methods are supported
      *
      * These need to be handled differently, so this method attempts to retrieve
-     * the associated Zend\Expressive\Router\Route instance.
+     * the associated Mezzio\Router\Route instance.
      *
      * If found, it checks to see if the route allows ANY HTTP method, and, if
      * so, marshals a successful route result.
