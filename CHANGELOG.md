@@ -38,8 +38,8 @@ First stable release.
 
 ### Fixed
 
-- Updated to use [zendframework/zend-expressive-router](https://github.com/zendframework/zend-expressive-router)
-  instead of zendframework/zend-expressive.
+- Updated to use [mezzio/mezzio-router](https://github.com/mezzio/mezzio-router)
+  instead of mezzio/mezzio.
 
 ## 0.2.0 - 2015-10-20
 
@@ -57,7 +57,7 @@ First stable release.
 
 ### Fixed
 
-- Updated to Expressive RC builds.
+- Updated to Mezzio RC builds.
 
 ## 0.1.0 - 2015-10-10
 
