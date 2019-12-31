@@ -1,16 +1,28 @@
 {
-    "name": "zendframework/zend-expressive-aurarouter",
-    "description": "Aura.Router integration for Expressive",
-    "type": "library",
+    "name": "mezzio/mezzio-aurarouter",
+    "description": "Aura.Router integration for Mezzio",
     "license": "BSD-3-Clause",
     "keywords": [
+        "laminas",
+        "mezzio",
         "aura",
-        "expressive",
         "http",
         "middleware",
         "psr",
         "psr-7"
     ],
+    "homepage": "https://mezzio.dev",
+    "support": {
+        "docs": "https://docs.mezzio.dev/mezzio-aurarouter/",
+        "issues": "https://github.com/mezzio/mezzio-aurarouter/issues",
+        "source": "https://github.com/mezzio/mezzio-aurarouter",
+        "rss": "https://github.com/mezzio/mezzio-aurarouter/releases.atom",
+        "chat": "https://laminas.dev/chat",
+        "forum": "https://discourse.laminas.dev"
+    },
+    "config": {
+        "sort-packages": true
+    },
     "extra": {
         "branch-alias": {
             "dev-master": "2.0-dev",
@@ -20,24 +32,25 @@
     "require": {
         "php": "^5.6 || ^7.0",
         "aura/router": "^3.0",
-        "psr/http-message": "^1.0",
-        "zendframework/zend-expressive-router": "^2.0",
-        "fig/http-message-util": "^1.1"
+        "fig/http-message-util": "^1.1",
+        "laminas/laminas-zendframework-bridge": "^1.0",
+        "mezzio/mezzio-router": "^2.0",
+        "psr/http-message": "^1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.7 || ^5.6",
-        "zendframework/zend-coding-standard": "~1.0.0",
-        "malukenho/docheader": "^0.1.5"
+        "laminas/laminas-coding-standard": "~1.0.0",
+        "malukenho/docheader": "^0.1.5",
+        "phpunit/phpunit": "^4.7 || ^5.6"
     },
     "autoload": {
-      "psr-4": {
-        "Zend\\Expressive\\Router\\": "src/"
-      }
+        "psr-4": {
+            "Mezzio\\Router\\": "src/"
+        }
     },
     "autoload-dev": {
-      "psr-4": {
-        "ZendTest\\Expressive\\Router\\": "test/"
-      }
+        "psr-4": {
+            "MezzioTest\\Router\\": "test/"
+        }
     },
     "scripts": {
         "check": [
@@ -49,5 +62,8 @@
         "cs-fix": "phpcbf",
         "license-check": "docheader check src/ test/",
         "test": "phpunit"
+    },
+    "replace": {
+        "zendframework/zend-expressive-aurarouter": "self.version"
     }
 }
