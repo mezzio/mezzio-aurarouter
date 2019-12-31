@@ -1,46 +1,24 @@
 {
-    "name": "zendframework/zend-expressive-aurarouter",
-    "description": "Aura.Router integration for Expressive",
+    "name": "mezzio/mezzio-aurarouter",
+    "description": "Aura.Router integration for Mezzio",
     "license": "BSD-3-Clause",
     "keywords": [
+        "laminas",
+        "mezzio",
         "aura",
-        "expressive",
         "http",
         "middleware",
         "psr",
-        "psr-7",
-        "zf",
-        "zendframework",
-        "zend-expressive"
+        "psr-7"
     ],
+    "homepage": "https://mezzio.dev",
     "support": {
-        "issues": "https://github.com/zendframework/zend-expressive-aurarouter/issues",
-        "source": "https://github.com/zendframework/zend-expressive-aurarouter",
-        "rss": "https://github.com/zendframework/zend-expressive-aurarouter/releases.atom",
-        "slack": "https://zendframework-slack.herokuapp.com",
-        "forum": "https://discourse.zendframework.com/c/questions/expressive"
-    },
-    "require": {
-        "php": "^7.1",
-        "aura/router": "^3.1",
-        "fig/http-message-util": "^1.1.2",
-        "psr/http-message": "^1.0.1",
-        "zendframework/zend-expressive-router": "^3.0.0alpha1 || ^3.0"
-    },
-    "require-dev": {
-        "malukenho/docheader": "^0.1.6",
-        "phpunit/phpunit": "^6.5.3",
-        "zendframework/zend-coding-standard": "~1.0.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Zend\\Expressive\\Router\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "ZendTest\\Expressive\\Router\\": "test/"
-        }
+        "docs": "https://docs.mezzio.dev/mezzio-aurarouter/",
+        "issues": "https://github.com/mezzio/mezzio-aurarouter/issues",
+        "source": "https://github.com/mezzio/mezzio-aurarouter",
+        "rss": "https://github.com/mezzio/mezzio-aurarouter/releases.atom",
+        "chat": "https://laminas.dev/chat",
+        "forum": "https://discourse.laminas.dev"
     },
     "config": {
         "sort-packages": true
@@ -51,8 +29,31 @@
             "dev-develop": "2.2.x-dev",
             "dev-release-3.0.0": "3.0.x-dev"
         },
-        "zf": {
-            "config-provider": "Zend\\Expressive\\Router\\AuraRouter\\ConfigProvider"
+        "laminas": {
+            "config-provider": "Mezzio\\Router\\AuraRouter\\ConfigProvider"
+        }
+    },
+    "require": {
+        "php": "^7.1",
+        "aura/router": "^3.1",
+        "fig/http-message-util": "^1.1.2",
+        "laminas/laminas-zendframework-bridge": "^1.0",
+        "mezzio/mezzio-router": "^3.0.0alpha1 || ^3.0",
+        "psr/http-message": "^1.0.1"
+    },
+    "require-dev": {
+        "laminas/laminas-coding-standard": "~1.0.0",
+        "malukenho/docheader": "^0.1.6",
+        "phpunit/phpunit": "^6.5.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mezzio\\Router\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MezzioTest\\Router\\": "test/"
         }
     },
     "scripts": {
@@ -66,5 +67,8 @@
         "test": "phpunit --colors=always",
         "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
         "license-check": "docheader check src/ test/"
+    },
+    "replace": {
+        "zendframework/zend-expressive-aurarouter": "self.version"
     }
 }
