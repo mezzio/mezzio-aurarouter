@@ -1,13 +1,14 @@
 <?php
+
 /**
- * @see       https://github.com/zendframework/zend-expressive-aurarouter for the canonical source repository
- * @copyright Copyright (c) 2015-2017 Zend Technologies USA Inc. (https://www.zend.com)
- * @license   https://github.com/zendframework/zend-expressive-aurarouter/blob/master/LICENSE.md New BSD License
+ * @see       https://github.com/mezzio/mezzio-aurarouter for the canonical source repository
+ * @copyright https://github.com/mezzio/mezzio-aurarouter/blob/master/COPYRIGHT.md
+ * @license   https://github.com/mezzio/mezzio-aurarouter/blob/master/LICENSE.md New BSD License
  */
 
 declare(strict_types=1);
 
-namespace ZendTest\Expressive\Router;
+namespace MezzioTest\Router;
 
 use Aura\Router\Generator as AuraGenerator;
 use Aura\Router\Map as AuraMap;
@@ -15,13 +16,13 @@ use Aura\Router\Matcher as AuraMatcher;
 use Aura\Router\Route as AuraRoute;
 use Aura\Router\RouterContainer as AuraRouterContainer;
 use Fig\Http\Message\RequestMethodInterface as RequestMethod;
+use Mezzio\Router\AuraRouter;
+use Mezzio\Router\Route;
+use Mezzio\Router\RouteResult;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\UriInterface;
 use Psr\Http\Server\MiddlewareInterface;
-use Zend\Expressive\Router\AuraRouter;
-use Zend\Expressive\Router\Route;
-use Zend\Expressive\Router\RouteResult;
 
 class AuraRouterTest extends TestCase
 {
