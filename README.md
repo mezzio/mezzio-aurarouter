@@ -1,19 +1,19 @@
-# Aura.Router Integration for Expressive
+# Aura.Router Integration for Mezzio
 
-[![Build Status](https://secure.travis-ci.org/zendframework/zend-expressive-aurarouter.svg?branch=master)](https://secure.travis-ci.org/zendframework/zend-expressive-aurarouter)
+[![Build Status](https://travis-ci.org/mezzio/mezzio-aurarouter.svg?branch=master)](https://travis-ci.org/mezzio/mezzio-aurarouter)
 
 Provides [Aura.Router](https://github.com/auraphp/Aura.Router) integration for
-[zend-expressive](https://github.com/zendframework/zend-expressive).
+[mezzio](https://github.com/mezzio/mezzio).
 
 ## Installation
 
 Install this library using composer:
 
 ```bash
-$ composer require zendframework/zend-expressive-aurarouter
+$ composer require mezzio/mezzio-aurarouter
 ```
 
 ## Documentation
 
-See the [zend-expressive](https://github.com/zendframework/zend-expressive/blob/master/doc/book)
-documentation tree, or browse online at http://zend-expressive.rtfd.org.
+See the [mezzio](https://github.com/mezzio/mezzio/blob/master/doc/book)
+documentation tree, or browse online at http://mezzio.rtfd.org.
