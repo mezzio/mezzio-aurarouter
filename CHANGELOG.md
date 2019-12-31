@@ -6,7 +6,7 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Added
 
-- [#7](https://github.com/zendframework/zend-expressive-aurarouter/pull/7) adds
+- [zendframework/zend-expressive-aurarouter#7](https://github.com/zendframework/zend-expressive-aurarouter/pull/7) adds
   support for specifying wildcard segments via the `wildcard` option passed to a
   route:
 
@@ -17,15 +17,15 @@ All notable changes to this project will be documented in this file, in reverse 
 
 ### Changed
 
-- [#11](https://github.com/zendframework/zend-expressive-aurarouter/pull/11)
+- [zendframework/zend-expressive-aurarouter#11](https://github.com/zendframework/zend-expressive-aurarouter/pull/11)
   updates the component to use the Aura.Router version 3 series instead of the
   version 2 series. The exposed API remains the same.
 
-- [#15](https://github.com/zendframework/zend-expressive-aurarouter/pull/15)
+- [zendframework/zend-expressive-aurarouter#15](https://github.com/zendframework/zend-expressive-aurarouter/pull/15)
   updates the router to populate the returned `RouteResult` with the associated
-  `Zend\Expressive\Router\Route` instance on a successful route match.
+  `Mezzio\Router\Route` instance on a successful route match.
 
-- [#15](https://github.com/zendframework/zend-expressive-aurarouter/pull/15)
+- [zendframework/zend-expressive-aurarouter#15](https://github.com/zendframework/zend-expressive-aurarouter/pull/15)
   updates the router to always honor `HEAD` and `OPTIONS` requests when a path
   matches. Dispatchers will need to check the `Route` composed in the
   `RouteResult` to determine if matches against these methods were explicit or
@@ -79,8 +79,8 @@ First stable release.
 
 ### Fixed
 
-- Updated to use [zendframework/zend-expressive-router](https://github.com/zendframework/zend-expressive-router)
-  instead of zendframework/zend-expressive.
+- Updated to use [mezzio/mezzio-router](https://github.com/mezzio/mezzio-router)
+  instead of mezzio/mezzio.
 
 ## 0.2.0 - 2015-10-20
 
@@ -98,7 +98,7 @@ First stable release.
 
 ### Fixed
 
-- Updated to Expressive RC builds.
+- Updated to Mezzio RC builds.
 
 ## 0.1.0 - 2015-10-10
 
