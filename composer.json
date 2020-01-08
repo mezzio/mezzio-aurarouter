@@ -13,7 +13,7 @@
     ],
     "homepage": "https://mezzio.dev",
     "support": {
-        "docs": "https://docs.mezzio.dev/mezzio-aurarouter/",
+        "docs": "https://docs.mezzio.dev/mezzio/features/router/aura/",
         "issues": "https://github.com/mezzio/mezzio-aurarouter/issues",
         "source": "https://github.com/mezzio/mezzio-aurarouter",
         "rss": "https://github.com/mezzio/mezzio-aurarouter/releases.atom",
