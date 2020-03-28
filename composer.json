@@ -70,6 +70,6 @@
         "license-check": "docheader check src/ test/"
     },
     "replace": {
-        "zendframework/zend-expressive-aurarouter": "self.version"
+        "zendframework/zend-expressive-aurarouter": "^3.0.1"
     }
 }
