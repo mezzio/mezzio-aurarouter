@@ -13,7 +13,7 @@ namespace MezzioTest\Router;
 use Generator;
 use Mezzio\Router\AuraRouter;
 use Mezzio\Router\RouterInterface;
-use Mezzio\Router\Test\AbstractImplicitMethodsIntegrationTest as RouterIntegrationTest;
+use Mezzio\Router\Test\ImplicitMethodsIntegrationTest as RouterIntegrationTest;
 use Prophecy\PhpUnit\ProphecyTrait;
 
 class ImplicitMethodsIntegrationTest extends RouterIntegrationTest
