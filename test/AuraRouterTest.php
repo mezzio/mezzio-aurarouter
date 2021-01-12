@@ -20,12 +20,16 @@ use Mezzio\Router\AuraRouter;
 use Mezzio\Router\Route;
 use Mezzio\Router\RouteResult;
 use PHPUnit\Framework\TestCase;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Message\UriInterface;
 use Psr\Http\Server\MiddlewareInterface;
+use ReflectionClass;
 
 class AuraRouterTest extends TestCase
 {
+    use ProphecyTrait;
+
     /** @var AuraRouterContainer */
     private $auraRouterContainer;
 
@@ -41,7 +45,7 @@ class AuraRouterTest extends TestCase
     /** @var AuraGenerator */
     private $auraGenerator;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->auraRouterContainer = $this->prophesize(AuraRouterContainer::class);
         $this->auraRoute           = $this->prophesize(AuraRoute::class);
@@ -71,7 +75,13 @@ class AuraRouterTest extends TestCase
         $route  = new Route('/foo', $this->getMiddleware(), [RequestMethod::METHOD_GET]);
         $router = $this->getRouter();
         $router->addRoute($route);
-        $this->assertAttributeContains($route, 'routesToInject', $router);
+
+        $reflectionClass = new ReflectionClass($router);
+
+        $property = $reflectionClass->getProperty('routesToInject');
+        $property->setAccessible(true);
+
+        $this->assertContains($route, $property->getValue($router));
 
         return $router;
     }
