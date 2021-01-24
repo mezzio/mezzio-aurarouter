@@ -65,7 +65,7 @@ class AuraRouter implements RouterInterface
      * an instance. If you need to customize the Aura.Router instance in any
      * way, you MUST inject it yourself.
      */
-    public function __construct(Router $router = null)
+    public function __construct(?Router $router = null)
     {
         if (null === $router) {
             $router = $this->createRouter();
