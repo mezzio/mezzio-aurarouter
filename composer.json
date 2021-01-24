@@ -39,7 +39,7 @@
     "require-dev": {
         "laminas/laminas-coding-standard": "~1.0.0",
         "laminas/laminas-diactoros": "^2.5.0",
-        "laminas/laminas-stratigility": "^3.0",
+        "laminas/laminas-stratigility": "^3.3.0",
         "malukenho/docheader": "^0.1.6",
         "phpunit/phpunit": "^9.3.0",
         "phpspec/prophecy-phpunit": "^2.0"
