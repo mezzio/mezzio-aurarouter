@@ -2,27 +2,25 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
-## 3.1.0 - TBD
+## 3.1.0 - 2021-01-24
 
-### Added
 
-- Nothing.
+-----
 
-### Changed
+### Release Notes for [3.1.0](https://github.com/mezzio/mezzio-aurarouter/milestone/1)
 
-- Nothing.
 
-### Deprecated
 
-- Nothing.
+### 3.1.0
 
-### Removed
+- Total issues resolved: **1**
+- Total pull requests resolved: **2**
+- Total contributors: **2**
 
-- Nothing.
+#### Enhancement
 
-### Fixed
-
-- Nothing.
+ - [4: PHP 8.0 compatiblity and dependency upgrades.](https://github.com/mezzio/mezzio-aurarouter/pull/4) thanks to @jensdenies and @boesing
+ - [3: Updated PHPUnit to version 9.3.0 and bumped the minimum PHP version to 7.3](https://github.com/mezzio/mezzio-aurarouter/pull/3) thanks to @jensdenies
 
 ## 3.0.1 - 2019-06-20
 
