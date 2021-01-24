@@ -29,7 +29,7 @@
         }
     },
     "require": {
-        "php": "^7.1",
+        "php": "^7.3",
         "aura/router": "^3.1",
         "fig/http-message-util": "^1.1.2",
         "laminas/laminas-zendframework-bridge": "^1.0",
@@ -41,7 +41,8 @@
         "laminas/laminas-diactoros": "^1.7.1",
         "laminas/laminas-stratigility": "^3.0",
         "malukenho/docheader": "^0.1.6",
-        "phpunit/phpunit": "^7.0.2"
+        "phpunit/phpunit": "^9.3.0",
+        "phpspec/prophecy-phpunit": "^2.0"
     },
     "autoload": {
         "psr-4": {
