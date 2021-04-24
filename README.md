@@ -1,7 +1,6 @@
 # Aura.Router Integration for Mezzio
 
-[![Build Status](https://travis-ci.com/mezzio/mezzio-aurarouter.svg?branch=master)](https://travis-ci.com/mezzio/mezzio-aurarouter)
-[![Coverage Status](https://coveralls.io/repos/github/mezzio/mezzio-aurarouter/badge.svg?branch=master)](https://coveralls.io/github/mezzio/mezzio-aurarouter?branch=master)
+[![Build Status](https://github.com/mezzio/mezzio-aurarouter/workflows/continuous-integration.yml/badge.svg)](https://github.com/mezzio/mezzio-aurarouter/actions/workflows/continuous-integration.yml)
 
 Provides [Aura.Router](https://github.com/auraphp/Aura.Router) integration for
 [mezzio](https://github.com/mezzio/mezzio).
