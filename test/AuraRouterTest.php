@@ -1,11 +1,5 @@
 <?php
 
-/**
- * @see       https://github.com/mezzio/mezzio-aurarouter for the canonical source repository
- * @copyright https://github.com/mezzio/mezzio-aurarouter/blob/master/COPYRIGHT.md
- * @license   https://github.com/mezzio/mezzio-aurarouter/blob/master/LICENSE.md New BSD License
- */
-
 declare(strict_types=1);
 
 namespace MezzioTest\Router;
@@ -33,9 +27,6 @@ class AuraRouterTest extends TestCase
     /** @var AuraRouterContainer */
     private $auraRouterContainer;
 
-    /** @var AuraRoute */
-    private $auraRoute;
-
     /** @var AuraMap */
     private $auraMap;
 
@@ -48,7 +39,6 @@ class AuraRouterTest extends TestCase
     protected function setUp(): void
     {
         $this->auraRouterContainer = $this->prophesize(AuraRouterContainer::class);
-        $this->auraRoute           = $this->prophesize(AuraRoute::class);
         $this->auraMap             = $this->prophesize(AuraMap::class);
         $this->auraMatcher         = $this->prophesize(AuraMatcher::class);
         $this->auraGenerator       = $this->prophesize(AuraGenerator::class);
@@ -60,17 +50,17 @@ class AuraRouterTest extends TestCase
         $this->middleware = $this->prophesize(MiddlewareInterface::class)->reveal();
     }
 
-    private function getRouter() : AuraRouter
+    private function getRouter(): AuraRouter
     {
         return new AuraRouter($this->auraRouterContainer->reveal());
     }
 
-    private function getMiddleware() : MiddlewareInterface
+    private function getMiddleware(): MiddlewareInterface
     {
         return $this->prophesize(MiddlewareInterface::class)->reveal();
     }
 
-    public function testAddingRouteAggregatesRoute()
+    public function testAddingRouteAggregatesRoute(): AuraRouter
     {
         $route  = new Route('/foo', $this->getMiddleware(), [RequestMethod::METHOD_GET]);
         $router = $this->getRouter();
@@ -226,7 +216,7 @@ class AuraRouterTest extends TestCase
         $this->auraMatcher->match($request)->willReturn($auraRoute);
 
         $middleware = $this->getMiddleware();
-        $router = $this->getRouter();
+        $router     = $this->getRouter();
         $router->addRoute(new Route('/foo', $middleware, [RequestMethod::METHOD_GET], '/foo'));
         $result = $router->match($request->reveal());
         $this->assertInstanceOf(RouteResult::class, $result);
@@ -376,7 +366,7 @@ class AuraRouterTest extends TestCase
         $this->assertSame($route, $matched);
     }
 
-    public function implicitMethods()
+    public function implicitMethods(): array
     {
         return [
             'head'    => [RequestMethod::METHOD_HEAD],
@@ -386,7 +376,6 @@ class AuraRouterTest extends TestCase
 
     /**
      * @dataProvider implicitMethods
-     *
      * @param string $method
      */
     public function testHeadAndOptionsAlwaysResultInRoutingSuccessIfPathMatches($method)
@@ -456,7 +445,7 @@ class AuraRouterTest extends TestCase
         $this->assertFalse($result->isMethodFailure());
     }
 
-    public function allHttpMethods()
+    public function allHttpMethods(): array
     {
         return [
             [RequestMethod::METHOD_GET],
@@ -471,7 +460,6 @@ class AuraRouterTest extends TestCase
 
     /**
      * @dataProvider allHttpMethods
-     *
      * @param string $method
      */
     public function testWhenRouteAllowsAnyHttpMethodRouterShouldResultInSuccess($method)
