@@ -43,7 +43,6 @@
         "laminas/laminas-coding-standard": "~2.1.4",
         "laminas/laminas-diactoros": "^2.5.0",
         "laminas/laminas-stratigility": "^3.3.0",
-        "malukenho/docheader": "^0.1.8",
         "phpunit/phpunit": "^9.3.0",
         "phpspec/prophecy-phpunit": "^2.0"
     },
@@ -59,15 +58,13 @@
     },
     "scripts": {
         "check": [
-            "@license-check",
             "@cs-check",
             "@test"
         ],
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
         "test": "phpunit --colors=always",
-        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
-        "license-check": "docheader check src/ test/"
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
     },
     "replace": {
         "zendframework/zend-expressive-aurarouter": "^3.0.1"
