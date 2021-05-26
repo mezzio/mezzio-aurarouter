@@ -1,11 +1,5 @@
 <?php
 
-/**
- * @see       https://github.com/mezzio/mezzio-aurarouter for the canonical source repository
- * @copyright https://github.com/mezzio/mezzio-aurarouter/blob/master/COPYRIGHT.md
- * @license   https://github.com/mezzio/mezzio-aurarouter/blob/master/LICENSE.md New BSD License
- */
-
 declare(strict_types=1);
 
 namespace MezzioTest\Router;
@@ -20,12 +14,12 @@ class ImplicitMethodsIntegrationTest extends RouterIntegrationTest
 {
     use ProphecyTrait;
 
-    public function getRouter() : RouterInterface
+    public function getRouter(): RouterInterface
     {
         return new AuraRouter();
     }
 
-    public function implicitRoutesAndRequests() : Generator
+    public function implicitRoutesAndRequests(): Generator
     {
         $options = [
             'tokens' => [

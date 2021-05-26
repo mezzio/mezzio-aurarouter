@@ -1,11 +1,5 @@
 <?php
 
-/**
- * @see       https://github.com/mezzio/mezzio-aurarouter for the canonical source repository
- * @copyright https://github.com/mezzio/mezzio-aurarouter/blob/master/COPYRIGHT.md
- * @license   https://github.com/mezzio/mezzio-aurarouter/blob/master/LICENSE.md New BSD License
- */
-
 declare(strict_types=1);
 
 namespace Mezzio\Router;
@@ -43,19 +37,13 @@ class AuraRouter implements RouterInterface
      */
     private $pathMethodMap = [];
 
-    /**
-     * @var Router
-     */
+    /** @var Router */
     private $router;
 
-    /**
-     * @var Route[]
-     */
+    /** @var Route[] */
     private $routes = [];
 
-    /**
-     * @var Route[] Routes aggregated to inject.
-     */
+    /** @var Route[] Routes aggregated to inject. */
     private $routesToInject = [];
 
     /**
@@ -74,18 +62,18 @@ class AuraRouter implements RouterInterface
         $this->router = $router;
     }
 
-    public function addRoute(Route $route) : void
+    public function addRoute(Route $route): void
     {
         $this->routesToInject[] = $route;
     }
 
-    public function match(Request $request) : RouteResult
+    public function match(Request $request): RouteResult
     {
         // Must inject routes prior to matching.
         $this->injectRoutes();
 
         $matcher = $this->router->getMatcher();
-        $route = $matcher->match($request);
+        $route   = $matcher->match($request);
 
         if (false === $route) {
             return $this->marshalFailedRoute($request, $matcher->getFailedRoute());
@@ -94,7 +82,7 @@ class AuraRouter implements RouterInterface
         return $this->marshalMatchedRoute($route);
     }
 
-    public function generateUri(string $name, array $substitutions = [], array $options = []) : string
+    public function generateUri(string $name, array $substitutions = [], array $options = []): string
     {
         // Must inject routes prior to generating URIs.
         $this->injectRoutes();
@@ -105,7 +93,7 @@ class AuraRouter implements RouterInterface
     /**
      * Create a default Aura router instance
      */
-    private function createRouter() : Router
+    private function createRouter(): Router
     {
         return new Router();
     }
@@ -118,12 +106,13 @@ class AuraRouter implements RouterInterface
      */
     private function marshalFailedRoute(
         Request $request,
-        AuraRoute $failedRoute = null
-    ) : RouteResult {
+        ?AuraRoute $failedRoute = null
+    ): RouteResult {
         // Evidently, getFailedRoute() can sometimes return null; these are 404
         // conditions. Additionally, if the failure is due to inability to
         // match the path, that to is a 404 condition.
-        if (null === $failedRoute
+        if (
+            null === $failedRoute
             || $failedRoute->failedRule === PathRule::class
         ) {
             return RouteResult::fromRouteFailure(Route::HTTP_METHOD_ANY);
@@ -139,7 +128,8 @@ class AuraRouter implements RouterInterface
         // If the above failed, check to see if the failure was due to method used.
         // This should only occur when HTTP_METHOD_ANY is used; however, in
         // that case, no method should result in failure.
-        if ($failedRoute->allows
+        if (
+            $failedRoute->allows
             && ! in_array($request->getMethod(), $failedRoute->allows)
         ) {
             return RouteResult::fromRouteFailure($failedRoute->allows);
@@ -151,7 +141,7 @@ class AuraRouter implements RouterInterface
     /**
      * Marshals a route result based on the matched AuraRoute and request method.
      */
-    private function marshalMatchedRoute(AuraRoute $auraRoute) : RouteResult
+    private function marshalMatchedRoute(AuraRoute $auraRoute): RouteResult
     {
         $route = $this->matchAuraRouteToRoute($auraRoute);
         if (! $route) {
@@ -165,7 +155,7 @@ class AuraRouter implements RouterInterface
     /**
      * Loops through any un-injected routes and injects them into the Aura.Router instance.
      */
-    private function injectRoutes() : void
+    private function injectRoutes(): void
     {
         foreach ($this->routesToInject as $index => $route) {
             $this->injectRoute($route);
@@ -177,7 +167,7 @@ class AuraRouter implements RouterInterface
     /**
      * Inject a route into the underlying Aura.Router instance.
      */
-    private function injectRoute(Route $route) : void
+    private function injectRoute(Route $route): void
     {
         $path = $route->getPath();
 
@@ -220,7 +210,6 @@ class AuraRouter implements RouterInterface
     /**
      * Match an Aura\Route to a Mezzio\Router\Route.
      *
-     * @param AuraRoute $auraRoute
      * @return false|Route False if unable to match to a composed route instance.
      */
     private function matchAuraRouteToRoute(AuraRoute $auraRoute)
