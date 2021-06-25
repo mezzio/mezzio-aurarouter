@@ -41,7 +41,9 @@
         "laminas/laminas-diactoros": "^2.5.0",
         "laminas/laminas-stratigility": "^3.3.0",
         "phpspec/prophecy-phpunit": "^2.0",
-        "phpunit/phpunit": "^9.3.0"
+        "phpunit/phpunit": "^9.3.0",
+        "psalm/plugin-phpunit": "^0.16.1",
+        "vimeo/psalm": "^4.8"
     },
     "autoload": {
         "psr-4": {
@@ -61,7 +63,8 @@
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
         "test": "phpunit --colors=always",
-        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+        "static-analysis": "psalm --shepherd --stats"
     },
     "replace": {
         "zendframework/zend-expressive-aurarouter": "^3.0.1"
