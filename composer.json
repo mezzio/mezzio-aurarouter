@@ -63,7 +63,8 @@
         "cs-check": "phpcs",
         "cs-fix": "phpcbf",
         "test": "phpunit --colors=always",
-        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml",
+        "static-analysis": "psalm --shepherd --stats"
     },
     "replace": {
         "zendframework/zend-expressive-aurarouter": "^3.0.1"
