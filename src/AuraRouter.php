@@ -33,18 +33,17 @@ class AuraRouter implements RouterInterface
     /**
      * Map paths to allowed HTTP methods.
      *
-     * @var array
+     * @var array<string, list<string>>
      */
-    private $pathMethodMap = [];
+    private array $pathMethodMap = [];
 
-    /** @var Router */
-    private $router;
+    private ?Router $router;
 
-    /** @var Route[] */
-    private $routes = [];
+    /** @var list<Route> */
+    private array $routes = [];
 
-    /** @var Route[] Routes aggregated to inject. */
-    private $routesToInject = [];
+    /** @var list<Route> Routes aggregated to inject. */
+    private array $routesToInject = [];
 
     /**
      * Constructor
