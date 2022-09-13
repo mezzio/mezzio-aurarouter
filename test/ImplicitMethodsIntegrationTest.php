@@ -8,12 +8,9 @@ use Generator;
 use Mezzio\Router\AuraRouter;
 use Mezzio\Router\RouterInterface;
 use Mezzio\Router\Test\ImplicitMethodsIntegrationTest as RouterIntegrationTest;
-use Prophecy\PhpUnit\ProphecyTrait;
 
 class ImplicitMethodsIntegrationTest extends RouterIntegrationTest
 {
-    use ProphecyTrait;
-
     public function getRouter(): RouterInterface
     {
         return new AuraRouter();
