@@ -43,10 +43,10 @@
     },
     "require-dev": {
         "laminas/laminas-coding-standard": "~2.3.0",
-        "laminas/laminas-diactoros": "^2.5.0",
-        "laminas/laminas-stratigility": "^3.3.0",
-        "phpspec/prophecy-phpunit": "^2.0",
-        "phpunit/phpunit": "^9.3.0"
+        "laminas/laminas-diactoros": "^2.17.0",
+        "laminas/laminas-stratigility": "^3.8.0",
+        "phpspec/prophecy-phpunit": "^2.0.1",
+        "phpunit/phpunit": "^9.5.24"
     },
     "autoload": {
         "psr-4": {
