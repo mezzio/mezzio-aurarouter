@@ -7,6 +7,7 @@ namespace Mezzio\Router;
 use Aura\Router\Route as AuraRoute;
 use Aura\Router\RouterContainer as Router;
 use Aura\Router\Rule\Path as PathRule;
+use Mezzio\Router\Route;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 use function array_key_exists;
@@ -211,9 +212,9 @@ class AuraRouter implements RouterInterface
      *
      * @return false|Route False if unable to match to a composed route instance.
      */
-    private function matchAuraRouteToRoute(AuraRoute $auraRoute)
+    private function matchAuraRouteToRoute(AuraRoute $auraRoute): false|Route
     {
-        return array_reduce($this->routes, function ($matched, $route) use ($auraRoute) {
+        return array_reduce($this->routes, static function ($matched, $route) use ($auraRoute) {
             if ($matched) {
                 return $matched;
             }
