@@ -39,7 +39,7 @@
         "aura/router": "^3.2",
         "fig/http-message-util": "^1.1.5",
         "mezzio/mezzio-router": "^3.6.0",
-        "psr/http-message": "^1.0.1"
+        "psr/http-message": "^1.0.1 || ^2.0.0"
     },
     "require-dev": {
         "laminas/laminas-coding-standard": "~2.5.0",
