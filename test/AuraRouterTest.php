@@ -365,7 +365,7 @@ class AuraRouterTest extends TestCase
     }
 
     /** @return array<string, array{0: string}> */
-    public function implicitMethods(): array
+    public static function implicitMethods(): array
     {
         return [
             'head'    => [RequestMethod::METHOD_HEAD],
@@ -444,7 +444,7 @@ class AuraRouterTest extends TestCase
     }
 
     /** @return list<array{0: string}> */
-    public function allHttpMethods(): array
+    public static function allHttpMethods(): array
     {
         return [
             [RequestMethod::METHOD_GET],

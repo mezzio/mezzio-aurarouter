@@ -16,7 +16,7 @@ class ImplicitMethodsIntegrationTest extends RouterIntegrationTest
         return new AuraRouter();
     }
 
-    public function implicitRoutesAndRequests(): Generator
+    public static function implicitRoutesAndRequests(): Generator
     {
         $options = [
             'tokens' => [
