@@ -6,10 +6,6 @@
     </PossiblyUnusedMethod>
   </file>
   <file src="src/AuraRouter/ConfigProvider.php">
-    <UndefinedClass>
-      <code>\Zend\Expressive\Router\AuraRouter</code>
-      <code>\Zend\Expressive\Router\RouterInterface</code>
-    </UndefinedClass>
     <UnusedClass>
       <code>ConfigProvider</code>
     </UnusedClass>

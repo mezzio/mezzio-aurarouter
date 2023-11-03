@@ -37,8 +37,8 @@ class ConfigProvider
                 RouterInterface::class => AuraRouter::class,
 
                 // Legacy Zend Framework aliases
-                \Zend\Expressive\Router\RouterInterface::class => RouterInterface::class,
-                \Zend\Expressive\Router\AuraRouter::class      => AuraRouter::class,
+                'Zend\Expressive\Router\RouterInterface' => RouterInterface::class,
+                'Zend\Expressive\Router\AuraRouter'      => AuraRouter::class,
             ],
             'invokables' => [
                 AuraRouter::class => AuraRouter::class,
