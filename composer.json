@@ -20,6 +20,7 @@
         "chat": "https://laminas.dev/chat",
         "forum": "https://discourse.laminas.dev"
     },
+    "abandoned": true,
     "config": {
         "sort-packages": true,
         "allow-plugins": {

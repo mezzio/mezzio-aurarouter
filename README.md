@@ -1,6 +1,10 @@
 # Aura.Router Integration for Mezzio
 
-[![Build Status](https://github.com/mezzio/mezzio-aurarouter/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/mezzio/mezzio-aurarouter/actions/workflows/continuous-integration.yml)
+> ## Abandoned
+>
+> This package is **abandoned** and will receive no further development
+>
+> See the Technical Steering Committee [meeting minutes](https://github.com/laminas/technical-steering-committee/blob/main/meetings/minutes/2024-08-12-TSC-Minutes.md#abandon-mezziomezzio-aurarouter).
 
 > ## 🇷🇺 Русским гражданам
 >
